@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
         //conversiones();
         // metodoTipos();
+        libro();
     }
 
     public static void metodoScanner() {
@@ -91,6 +92,25 @@ public class Main {
         System.out.println(frase.charAt(0));
     }
     
+    public static void libro(){
+        String nombre;
+        var id=0;
+        var precio=0.0;
+        var envio=true;
+        Scanner leer= new Scanner(System.in);
+        System.out.println("Proporciona el nombre:");
+        nombre=leer.nextLine();
+        System.out.println("Proporciona el id:");
+        id=leer.nextInt();
+        System.out.println("Proporciona el precio:");
+        precio=leer.nextDouble();
+        System.out.println("Proporciona el envio gratuito:");
+        envio=leer.nextBoolean();
+        
+        System.out.println(nombre+" "+id);
+        System.out.println("Precio: $"+precio);
+        System.out.println("Envio Gratuito: "+envio);
+    }
     
 
 }
