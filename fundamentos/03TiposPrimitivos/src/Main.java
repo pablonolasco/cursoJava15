@@ -40,5 +40,39 @@ public class Main {
         System.out.println("short "+Short.MAX_VALUE+" "+Short.MIN_VALUE);
         System.out.println("valor:"+numero_short);
         
+        int numeroInt=2147483647;
+        System.out.println("int "+Integer.MAX_VALUE+" "+Integer.MIN_VALUE);
+        System.out.println("valor: "+numeroInt);
+        
+        long enteroLargo=9223372036854775807L;
+        System.out.println("long "+Long.MAX_VALUE+" "+Long.MIN_VALUE);
+        System.out.println("valor: "+enteroLargo);
+        
+        float numeroFlot=3.4028235E38f;
+        System.out.println("float "+Float.MAX_VALUE+" "+Float.MIN_VALUE);
+        System.out.println("valor:"+numeroFlot);
+        
+        double numeroDoble=3.4028235E38;
+        System.out.println("double "+Float.MAX_VALUE+" "+Float.MIN_VALUE);
+        System.out.println("valor:"+numeroFlot);
+        
+        char caracter=64;
+        char simbol='=';
+        char varcaracter='A';
+        
+        System.out.println("valor: "+caracter+" "+Character.isUpperCase(caracter));
+        System.out.println("simbol: "+simbol);
+        
+        boolean varBoolean=true;
+        
+        if (varBoolean) {
+            System.out.println("valor:"+varBoolean);
+        } else {
+            System.out.println("valor:"+varBoolean);
+        }
+        
+        var edad=18;
+        var adulto=edad>=18;
+        System.out.println((adulto)?"es mayor de edad":"es menor de edad");
     }
 }
