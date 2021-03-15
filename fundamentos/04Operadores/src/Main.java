@@ -14,7 +14,8 @@ public class Main {
         // asignar();
         //unarios();
         //igualdad();
-        relacionales();
+        //relacionales();
+        ternario();
     }
 
     public static void asignar() {
@@ -75,38 +76,49 @@ public class Main {
         } else {
             System.out.println("no son palabras iguales");
         }
-        
+
         // Es par
-        
-        if (a%2==0) {
+        if (a % 2 == 0) {
             System.out.println("Es par");
         } else {
             System.out.println("Es impar");
         }
-        
-        if(a>=18){
+
+        if (a >= 18) {
             System.out.println("Es mayor de edad");
-        }else{
+        } else {
             System.out.println("Es menor de edad");
         }
 
     }
-    
-    public static void relacionales(){
-        int a=11;
-        
-        if (a>=0 && a<=10) {
+
+    public static void relacionales() {
+        int a = 11;
+
+        if (a >= 0 && a <= 10) {
             System.out.println("Esta en el rango");
         } else {
             System.out.println("Fuera de rango");
         }
-        
-        boolean vacaciones=false;
-        boolean diasDescanso=true;
+
+        boolean vacaciones = false;
+        boolean diasDescanso = true;
         if (vacaciones || diasDescanso) {
             System.out.println("Puede ir a ver el partido");
         } else {
             System.out.println("No puede ir a ver el partido");
+        }
+    }
+
+    public static void ternario() {
+        int a = 18;
+
+        boolean resultado = (a >= 18) ? true : false;
+
+        if (resultado) {
+            System.out.println("Es mayor de edad");
+        } else {
+            System.out.println("Es menor de edad");
         }
     }
 }
