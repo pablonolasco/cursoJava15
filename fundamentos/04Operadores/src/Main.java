@@ -1,9 +1,11 @@
+
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Windows10
@@ -15,7 +17,10 @@ public class Main {
         //unarios();
         //igualdad();
         //relacionales();
-        ternario();
+        //ternario();
+        //procedencia();
+        //rectangulo();
+        mayor();
     }
 
     public static void asignar() {
@@ -120,5 +125,48 @@ public class Main {
         } else {
             System.out.println("Es menor de edad");
         }
+    }
+
+    public static void procedencia() {
+        int x = 5;
+        int y = 10;
+        int z = ++x + y--;
+        System.out.println("x:" + x);
+        System.out.println("y:" + y);
+        System.out.println("z:" + z);
+
+        int r = 4 + 5 * 6 / 3;
+        System.out.println("r:" + r);
+
+    }
+
+    public static void rectangulo() {
+        int alto;
+        int ancho;
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Proporciona el alto:");
+        alto = leer.nextInt();
+        System.out.println("Proporciona el ancho:");
+        ancho = leer.nextInt();
+
+        System.out.println("Area:" + (alto * ancho));
+        System.out.println("Perimetro:" + ((alto + ancho) / 2));
+    }
+
+    public static void mayor() {
+        int num1;
+        int num2;
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Proporciona el numero1:");
+        num1 = leer.nextInt();
+        System.out.println("Proporciona el numero2:");
+        num2 = leer.nextInt();
+        if (num1 > num2) {
+            System.out.println("El numero mayor es:" + num1);
+        } else {
+            System.out.println("El numero mayor es:" + num2);
+
+        }
+
     }
 }
