@@ -15,5 +15,8 @@ public class Main {
         a1.a=4;
         a1.b=8;
         a1.sumar();
+        int result=a1.sumarConRetorno();
+        
+        System.out.println("result:"+result);
     }
 }
