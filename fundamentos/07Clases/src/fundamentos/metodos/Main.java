@@ -9,14 +9,11 @@ package fundamentos.metodos;
  *
  * @author Windows10
  */
-public class Aritmetica {
-    int a;
-    int b;
-    
-    public void sumar(){
-        int resultado;
-        resultado=a+b;
-        System.out.println("suma:"+resultado);
+public class Main {
+    public static void main(String[] args) {
+        Aritmetica a1= new Aritmetica();
+        a1.a=4;
+        a1.b=8;
+        a1.sumar();
     }
-    
 }
