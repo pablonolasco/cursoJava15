@@ -23,5 +23,9 @@ public class Aritmetica {
         return a+b;
     }
     
+    public int sumaConParametros(int num1, int num2){
+        return num1+num2;
+    }
+    
     
 }

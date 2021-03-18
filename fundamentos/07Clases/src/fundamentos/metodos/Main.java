@@ -18,5 +18,9 @@ public class Main {
         int result=a1.sumarConRetorno();
         
         System.out.println("result:"+result);
+        
+        result=a1.sumaConParametros(4, 4);
+        
+        System.out.println("result:"+result);
     }
 }
