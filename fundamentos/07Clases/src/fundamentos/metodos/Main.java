@@ -22,5 +22,8 @@ public class Main {
         result=a1.sumaConParametros(4, 4);
         
         System.out.println("result:"+result);
+        
+        Aritmetica aritmetica= new Aritmetica(10, 4);
+        aritmetica.sumar();
     }
 }

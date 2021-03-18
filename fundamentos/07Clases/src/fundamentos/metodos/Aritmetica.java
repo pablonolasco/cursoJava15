@@ -13,6 +13,17 @@ public class Aritmetica {
     int a;
     int b;
     
+    // Constructor
+    public Aritmetica(){
+        System.out.println("constructor vacio");
+    }
+    
+    // Constructor inicializando variables
+    public Aritmetica(int a, int b){
+        this.a=a;
+        this.b=b;
+    }
+    
     public void sumar(){
         int resultado;
         resultado=a+b;
