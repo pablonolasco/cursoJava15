@@ -5,6 +5,8 @@
  */
 package fundamentos.metodos;
 
+import fundamentos.ejercicio.Caja;
+
 /**
  *
  * @author Windows10
@@ -25,5 +27,14 @@ public class Main {
         
         Aritmetica aritmetica= new Aritmetica(10, 4);
         aritmetica.sumar();
+        
+        Caja c1= new Caja();
+        c1.ancho=3;
+        c1.alto=2;
+        c1.profundo=6;
+        
+        double resultado=c1.calcularVolumen();
+        System.out.println("resultado="+resultado);
+        
     }
 }
