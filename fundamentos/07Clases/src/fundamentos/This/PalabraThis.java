@@ -11,6 +11,7 @@ package fundamentos.This;
  */
 public class PalabraThis {
     public static void main(String[] args) {
+        // el objeto this va cambiando dependiendo del objeto que este ejecutando
         Persona persona= new Persona("Pablo", "Nolasco");
         System.out.println("Persona "+persona);
         System.out.println("nombre "+persona.nombre);
