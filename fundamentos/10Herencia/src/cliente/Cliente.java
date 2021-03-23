@@ -12,25 +12,30 @@ import java.util.Date;
  *
  * @author Windows10
  */
-public class Cliente extends Persona{
+public class Cliente extends Persona {
+
     private int idCliente;
     private Date fechaRegistro;
     private boolean vip;
     private static int contadorCliente;
 
-    public Cliente(String nombre,boolean vip) {
-        super(nombre);
-        this.idCliente=++Cliente.contadorCliente;
-        this.fechaRegistro= new Date();
+    public Cliente() {
+        // Sobrecarga de constructores
+        // llama a super();
+        this.idCliente = ++Cliente.contadorCliente;
+    }
+
+    public Cliente(String nombre, boolean vip) {
+        this();
+        //super(nombre);
+        this.nombre=nombre;
+        this.fechaRegistro = new Date();
         this.vip = vip;
     }
-    
-    
 
     public int getIdCliente() {
         return idCliente;
     }
-
 
     public Date getFechaRegistro() {
         return fechaRegistro;
@@ -67,6 +72,4 @@ public class Cliente extends Persona{
         return sb.toString();
     }
 
-    
-    
 }
