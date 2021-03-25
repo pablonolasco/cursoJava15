@@ -10,5 +10,8 @@ package mx.com.test;
  * @author OPTIPLEX 9010
  */
 public class Test {
+    public static void main(String[] args) {
+        
+    }
     
 }
