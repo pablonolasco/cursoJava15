@@ -11,16 +11,20 @@ package mx.com.dominio;
  */
 public class Empleado {
     
-    private static final int idEmpleado;
+    private int idEmpleado;
     private static int contador;
     private String nombre;
     private int sueldo;
     
-    static{
-        idEmpleado=++contador;
-    }
+//    static{
+//        idEmpleado=++contador;
+//    }
 
+    private Empleado(){
+        this.idEmpleado=++contador;
+    }
     public Empleado(String nombre, int sueldo) {
+        this();
         this.nombre = nombre;
         this.sueldo = sueldo;
     }
