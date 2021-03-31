@@ -11,7 +11,14 @@ package mx.com.dominio;
  */
 public class Test {
     public static void main(String[] args) {
+        Empleado empleado= new Empleado("ximena1", 10);
+        imprimir(empleado);
         Gerente gerente= new Gerente("ximena", 100, "admon");
-        System.out.println(gerente.detalleEmpleado());
+        imprimir(gerente);
+    }
+    
+    // Polimorfismo
+    public static void imprimir(Empleado emp){
+          System.out.println(emp.detalleEmpleado());
     }
 }
