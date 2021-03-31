@@ -18,11 +18,12 @@ public class Test {
         empleado= new Escritor("ximena", 100,TipoEscritura.CLASICA);
         System.out.println(empleado);
         
-        // Convertir una variable padre a hija Dowcasting, hacia abajo
+        // Convertir un objeto padre a hija Dowcasting, hacia abajo
         // ((Escritor)empleado).getTipoEscritura();
         Escritor escritor=(Escritor)empleado;
         
         //  Upcasting
+        // Convertir una objeto tipo hija a un padre
         // hacia arriba
         Empleado empleado1=escritor;
         System.out.println(empleado1);
