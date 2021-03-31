@@ -16,6 +16,14 @@ public class Gerente extends Empleado{
         super(nombre, sueldo);
         this.departamento= departamento;
     }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
     
     @Override
     public String detalleEmpleado(){
