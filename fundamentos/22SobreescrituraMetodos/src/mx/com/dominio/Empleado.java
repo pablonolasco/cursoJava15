@@ -41,7 +41,7 @@ public class Empleado {
         this.sueldo = sueldo;
     }
 
-    public String detalleEmpleado(){
+    protected String detalleEmpleado(){
         return "nombre: "+this.nombre+" sueldo: "+this.sueldo;
     }
     @Override
