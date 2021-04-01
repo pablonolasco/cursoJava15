@@ -9,9 +9,10 @@ package Excepciones;
  *
  * @author Windows10
  */
-public class OperacionExcepcion extends Exception{
-    // Exception check, se obliga al metodo a colocar el throws en la firma del metodo
-    public OperacionExcepcion(String mensaje){
+public class OperacionRuntimeException extends RuntimeException {
+    // Exception uncheck, no se obliga al metodo a colocar el throws en la firma del metodo
+
+    public OperacionRuntimeException(String mensaje) {
         super(mensaje);
-    } 
+    }
 }
