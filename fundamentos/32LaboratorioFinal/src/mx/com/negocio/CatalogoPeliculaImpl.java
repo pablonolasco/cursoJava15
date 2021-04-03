@@ -20,34 +20,34 @@ import mx.com.excepciones.LecturaDatosEx;
  */
 public class CatalogoPeliculaImpl implements ICatalogoPelicula {
 
-    private IAccesoDatos datos;
+    private final IAccesoDatos datos;
 
     public CatalogoPeliculaImpl() {
         datos = new AccesoDatosImp();
     }
 
     @Override
-    public void agregarPelicula(String nombre, String nombreArchivo) {
+    public void agregarPelicula(String nombre) {
         try {
-            this.datos.escribir(new Pelicula(nombre), nombreArchivo, true);
-        } catch (EscrituraDatosEx e) {
-            System.err.println("Error al agregarPelicula:" + e.getMessage());
+            this.datos.escribir(new Pelicula(nombre), NOMBRE_ARCHIVO, this.datos.existe(NOMBRE_ARCHIVO));
+        } catch (AccesoDatosEx ex) {
+            Logger.getLogger(CatalogoPeliculaImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
-    public void listarPeliculas(String nombreArchivo) {
+    public void listarPeliculas() {
         try {
-            System.out.println(this.datos.listar(nombreArchivo));
+            System.out.println(this.datos.listar(NOMBRE_ARCHIVO));
         } catch (LecturaDatosEx e) {
             System.err.println("Error al listarPeliculas:"+e.getMessage());
         }
     }
 
     @Override
-    public void buscarPeliculas(String nombreArchivo, String buscar) {
+    public void buscarPeliculas(String buscar) {
         try {
-            var result=this.datos.buscar(nombreArchivo, buscar);
+            var result=this.datos.buscar(NOMBRE_ARCHIVO, buscar);
             System.out.println(result);
         } catch (LecturaDatosEx e) {
             System.err.println("Error al buscarPeliculas:"+e.getMessage());
@@ -55,14 +55,15 @@ public class CatalogoPeliculaImpl implements ICatalogoPelicula {
     }
 
     @Override
-    public void iniciarArchivo(String archivo) {
+    public void iniciarArchivo() {
         try {
-            if (this.datos.existe(archivo)) {
-                this.datos.eliminar(archivo);
+            if(this.datos.existe(NOMBRE_ARCHIVO)){
+                this.datos.eliminar(NOMBRE_ARCHIVO);
+                this.datos.crear(NOMBRE_ARCHIVO);
             }else{
-                this.datos.crear(archivo);
+                this.datos.crear(NOMBRE_ARCHIVO);
             }
-
+         
         } catch (AccesoDatosEx ex) {
             System.err.println("Error iniciarArchivo:" + ex.getMessage());
         }

@@ -18,7 +18,6 @@ public class TestLaboratorio {
         Scanner leer = new Scanner(System.in);
         var opcion = 0;
         ICatalogoPelicula pelicula = new CatalogoPeliculaImpl();
-        String nombreArchivo="";
         do {
             System.out.println("Menu:");
             System.out.println("1-. Iniciar catalogo de peliculas:");
@@ -30,20 +29,19 @@ public class TestLaboratorio {
             opcion = leer.nextInt();
             switch (opcion) {
                 case 1:
-                    System.out.println("Ingresa nombre del catalogo");
-                    nombreArchivo=leer.next();
-                    pelicula.iniciarArchivo(nombreArchivo);
+                    System.out.println("Archivo iniciado");
+                    pelicula.iniciarArchivo();
                     break;
                 case 2:
                     System.out.println("Ingresa nombre de la pelicula:");
-                    pelicula.agregarPelicula(leer.next(), nombreArchivo);
+                    pelicula.agregarPelicula(leer.next());
                     break;
                 case 3:
-                    pelicula.listarPeliculas(nombreArchivo);
+                    pelicula.listarPeliculas();
                     break;
                 case 4:
                     System.out.println("Ingresa nombre de la pelicula:");
-                    pelicula.buscarPeliculas(nombreArchivo, leer.next());
+                    pelicula.buscarPeliculas(leer.next());
                     break;
                 case 0:
                     System.exit(0);

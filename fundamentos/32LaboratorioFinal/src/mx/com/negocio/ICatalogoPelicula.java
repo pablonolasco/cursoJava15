@@ -10,9 +10,15 @@ package mx.com.negocio;
  * @author OPTIPLEX 9010
  */
 public interface ICatalogoPelicula {
-    void agregarPelicula(String nombre,String nombreArchivo);
-    void listarPeliculas(String nombreArchivo);
-    void buscarPeliculas(String nombreArchivo,String buscar);
-    void iniciarArchivo(String archivo);
-    
+
+    String NOMBRE_ARCHIVO = "peliculas.txt";
+
+    void agregarPelicula(String nombre);
+
+    void listarPeliculas();
+
+    void buscarPeliculas( String buscar);
+
+    void iniciarArchivo();
+
 }

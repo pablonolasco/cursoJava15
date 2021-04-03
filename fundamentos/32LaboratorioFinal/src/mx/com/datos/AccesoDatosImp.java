@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import mx.com.domain.Pelicula;
 import mx.com.excepciones.AccesoDatosEx;
 import mx.com.excepciones.EscrituraDatosEx;
@@ -63,6 +61,7 @@ public class AccesoDatosImp implements IAccesoDatos {
             PrintWriter salida = new PrintWriter(new FileWriter(file, agregar));
             salida.println(pelicula.getNombre());
             salida.close();
+            System.out.println("Se ha escrito la pelicula " + pelicula.getNombre());
         } catch (FileNotFoundException fe) {
             fe.printStackTrace(System.out);
             throw new EscrituraDatosEx("Excepcion al escribir en el archivo: " + fe.getMessage());
@@ -73,23 +72,28 @@ public class AccesoDatosImp implements IAccesoDatos {
     }
 
     @Override
-    public String buscar(String nombreArchivo, String buscar) throws LecturaDatosEx{
+    public String buscar(String nombreArchivo, String buscar) throws LecturaDatosEx {
         try {
-            File file= new File(nombreArchivo);
-            BufferedReader lectura= new BufferedReader(new FileReader(file));
-            var data=lectura.readLine();
-            while (data!=null) {                
-                if (data.equalsIgnoreCase(buscar)) {
-                    return "El nombre de la pelicula existe";
+            File file = new File(nombreArchivo);
+            BufferedReader lectura = new BufferedReader(new FileReader(file));
+            var data = lectura.readLine();
+            String resultado = "La pelicula no existe";
+            var indice = 1;
+            while (data != null) {
+                if (buscar != null && data.equalsIgnoreCase(buscar)) {
+                    resultado = "El nombre de la pelicula existe en el indice " + indice;
+                    break;
                 }
-                data=lectura.readLine();
+                data = lectura.readLine();
+                indice++;
             }
-            
-            return "La pelicula no existe";
-            
+            lectura.close();
+          
+            return resultado;
+
         } catch (IOException e) {
             e.printStackTrace(System.out);
-            throw new LecturaDatosEx("Excepcion al buscar pelicula: "+e.getMessage());
+            throw new LecturaDatosEx("Excepcion al buscar pelicula: " + e.getMessage());
         }
     }
 
@@ -111,12 +115,14 @@ public class AccesoDatosImp implements IAccesoDatos {
     }
 
     @Override
-    public void eliminar(String nombreArchivo)throws AccesoDatosEx{
+    public void eliminar(String nombreArchivo) throws AccesoDatosEx {
         try {
-            File file= new File(nombreArchivo);
-            file.delete();
+            File file = new File(nombreArchivo);
+            if (file.exists()) {
+                file.delete();
+            }
         } catch (Exception e) {
-            throw new AccesoDatosEx("Excepcion al eliminar archivo:"+e.getMessage());
+            throw new AccesoDatosEx("Excepcion al eliminar archivo:" + e.getMessage());
         }
     }
 
